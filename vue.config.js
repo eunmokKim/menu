@@ -1,4 +1,12 @@
-const { defineConfig } = require('@vue/cli-service')
-module.exports = defineConfig({
-  transpileDependencies: true
-})
+module.exports = {
+  devServer : {
+    proxy : {
+      '/kakao' : {
+        target : 'http://localhost:12345'
+      },
+      '/menu' : {
+        target : 'http://localhost:12345'
+      }
+    }
+  }
+}
